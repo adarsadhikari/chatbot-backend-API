@@ -21,12 +21,12 @@ TAVILY_API_KEY=os.getenv("TAVILY_API_KEY")
 systemprompt="AI chatbot"
 
 #def aiagent(system_prompt, query, allowsearch):
-def aiagent(query, allowsearch):
+def aiagent(prompt, query, allowsearch):
     llm=ChatGroq(model="llama-3.3-70b-versatile")
     tools=[TavilySearchResults(max_results=2)] if allowsearch else []
 
     #agent=create_react_agent(model=llm,tools=tools,state_modifier=system_prompt)
-    agent=create_react_agent(model=llm,tools=tools)
+    agent=create_react_agent(model=llm,tools=tools,prompt=system_prompt)
     state={'messages':query}
     response=agent.invoke(state)
     messages=response.get("messages")
