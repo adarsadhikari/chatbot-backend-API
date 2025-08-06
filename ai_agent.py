@@ -26,7 +26,7 @@ def aiagent(prompt, query, allowsearch):
     tools=[TavilySearchResults(max_results=2)] if allowsearch else []
 
     #agent=create_react_agent(model=llm,tools=tools,state_modifier=systemprompt)
-    agent=create_react_agent(model=llm,tools=tools,prompt=systemprompt)
+    agent=create_react_agent(model=llm,tools=tools,prompt=system_prompt)
     state={'messages':query}
     response=agent.invoke(state)
     messages=response.get("messages")
