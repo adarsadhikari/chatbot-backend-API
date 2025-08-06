@@ -25,8 +25,8 @@ def aiagent(prompt, query, allowsearch):
     llm=ChatGroq(model="llama-3.3-70b-versatile")
     tools=[TavilySearchResults(max_results=2)] if allowsearch else []
 
-    #agent=create_react_agent(model=llm,tools=tools,state_modifier=system_prompt)
-    agent=create_react_agent(model=llm,tools=tools,prompt=system_prompt)
+    #agent=create_react_agent(model=llm,tools=tools,state_modifier=systemprompt)
+    agent=create_react_agent(model=llm,tools=tools,prompt=systemprompt)
     state={'messages':query}
     response=agent.invoke(state)
     messages=response.get("messages")
