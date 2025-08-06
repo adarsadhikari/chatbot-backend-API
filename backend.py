@@ -20,8 +20,9 @@ def chat_endpoint(request:RequestState):
     """
     query=request.messages
     allowsearch=request.allow_search
-    systemprompt=request.system_prompt
-    response=aiagent(systemprompt, query, allowsearch)
+    #systemprompt=request.system_prompt
+    #response=aiagent(systemprompt, query, allowsearch)
+    response=aiagent(query, allowsearch)
     return response
 
 #for local developement only
