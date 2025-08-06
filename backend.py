@@ -4,7 +4,7 @@ from typing import List
 #setup pydantic model
 
 class RequestState(BaseModel):
-    system_prompt: str
+    systemprompt: str
     messages: List[str]
     allow_search: bool
 
@@ -20,7 +20,7 @@ def chat_endpoint(request:RequestState):
     """
     query=request.messages
     allowsearch=request.allow_search
-    prompt=request.system_prompt
+    prompt=request.systemprompt
     #response=aiagent(systemprompt, query, allowsearch)
     response=aiagent(prompt, query, allowsearch)
     return response
