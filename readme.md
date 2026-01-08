@@ -8,6 +8,5 @@ A lightweight backend API for a chatbot application powered by LangChain, using 
 ⚡ FastAPI
 🧠 LangChain
 🦙 LLaMA (via ChatGroq API)
-🌐 FAST API
 ☁️ Deployable on Render / any cloud provider
 
